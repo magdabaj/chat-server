@@ -3,14 +3,15 @@ import {ParticipantController} from "./participant.controller";
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {ParticipantRepository} from "./participant.repository";
 import {AuthModule} from "../auth/auth.module";
+import {ParticipantService} from "./participant.service";
 
 @Module({
     imports: [
         TypeOrmModule.forFeature([ParticipantRepository]),
         AuthModule
     ],
-    providers: [ParticipantModule],
-    controllers: [ParticipantController]
+    providers: [ParticipantService],
+    controllers: [ParticipantController],
 })
 export class ParticipantModule {
 }
