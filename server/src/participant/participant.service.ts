@@ -27,9 +27,9 @@ export class ParticipantService {
 
     async createParticipant(
         user: UserEntity,
-        userId: number,
-        createParticipantDto: CreateParticipantDto
+        createParticipantDto: CreateParticipantDto,
+        roomId: number
     ): Promise<ParticipantEntity> {
-        return this.participantRepository.createParticipant(createParticipantDto, userId, user)
+        return this.participantRepository.createParticipant(roomId, createParticipantDto, user)
     }
 }

@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf62d892-d430-403a-92d1-bb59fb354cac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/message/message.entity.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/participant/participant.entity.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/room/room.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/user.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/typeorm.config.ts" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/message/dto/create-message.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/message/message.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/message/message.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/message/message.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/message/message.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/message/message.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/message/message.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/participant/dto/create-participant.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/participant/dto/create-participant.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/participant/participant.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/participant/participant.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/participant/participant.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/participant/participant.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/participant/participant.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/participant/participant.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/participant/participant.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/participant/participant.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/room/room.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/room/room.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/room/room.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/room/room.repository.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +24,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1fd1bexeHS5QH67GtMacwCaOFKZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -25,9 +34,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/server/node_modules/typescript/lib" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -38,10 +50,18 @@
       <option name="presentableId" value="Default" />
       <updated>1596533233356</updated>
       <workItem from="1596533239024" duration="12000" />
+      <workItem from="1596611210675" duration="9210000" />
+      <workItem from="1596621641884" duration="6660000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2663" y="337" width="424" height="479" key="FileChooserDialogImpl" timestamp="1596611226549">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state x="2663" y="337" width="424" height="479" key="FileChooserDialogImpl/1920.0.1920.1200/0.0.1920.1080@1920.0.1920.1200" timestamp="1596611226549" />
   </component>
 </project>

@@ -43,10 +43,10 @@ export class ParticipantController {
     @UsePipes(ValidationPipe)
     createParticipant(
         @Param('roomId', ParseIntPipe) roomId,
-        @Body('userId', ParseIntPipe) userId,
+        @Body('userId', ParseIntPipe, ValidationPipe) createParticipantDto: CreateParticipantDto,
         @Req() req
     ): Promise<ParticipantEntity> {
-        this.logger.verbose(`User "${req.user.username}" creating a new participant with id ${userId}. Data: ${JSON.stringify(roomId)} `)
-        return this.participantService.createParticipant(roomId, userId, req.user)
+        this.logger.verbose(`User "${req.user.username}" creating a new participant with id ${JSON.stringify(createParticipantDto)}. Data: ${JSON.stringify(roomId)} `)
+        return this.participantService.createParticipant(roomId, createParticipantDto, req.user)
     }
 }

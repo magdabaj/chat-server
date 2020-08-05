@@ -8,13 +8,13 @@ export class ParticipantEntity extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number
 
-    @ManyToOne(type => UserEntity, user => user.participants, { eager: false})
+    @ManyToOne(type => UserEntity, user => user.participants)
     user: UserEntity
 
     @Column()
     userId: number
 
-    @ManyToOne(type => RoomEntity, room => room.participants, {eager:true})
+    @ManyToOne(type => RoomEntity, room => room.participants)
     room: RoomEntity
 
     @Column()

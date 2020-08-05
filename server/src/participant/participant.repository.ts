@@ -39,7 +39,7 @@ export class ParticipantRepository extends Repository<ParticipantEntity> {
         query.where('participant.userId = :userId', { userId: user.id })
 
         try {
-            return  await query.getRawMany()
+            return await query.getRawMany()
         } catch (e) {
             this.logger.error(`Failed to get participants for user "${user.username}"`, e.stack)
             throw new InternalServerErrorException()
@@ -63,7 +63,6 @@ export class ParticipantRepository extends Repository<ParticipantEntity> {
         try {
             let rooms = await query.getRawMany()
             rooms.map(room => roomsIds.push(room.participant_roomId))
-            console.log(roomsIds)
             query2.where('participant.roomId IN (:...roomId)', {roomId: roomsIds})
             // query3.leftJoinAndSelect('part.roomId', 'room')
             //     .where('participant.roomId IN (:...roomId)', { roomId: roomsIds})
@@ -76,12 +75,12 @@ export class ParticipantRepository extends Repository<ParticipantEntity> {
     }
 
     async createParticipant(
+        roomId: number,
         createParticipantDto: CreateParticipantDto,
-        userId: number,
         user: UserEntity,
     ): Promise<ParticipantEntity> {
         const participant = new ParticipantEntity()
-        const { roomId } = createParticipantDto
+        const { userId } = createParticipantDto
 
         participant.roomId = roomId
         participant.userId = userId

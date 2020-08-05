@@ -13,7 +13,7 @@ export class RoomEntity extends BaseEntity {
     @Column()
     type: boolean
 
-    @OneToMany(type => ParticipantEntity, participant => participant.room, { eager: false })
+    @OneToMany(type => ParticipantEntity, participant => participant.room, { eager: true })
     participants: ParticipantEntity[]
 
     @OneToMany(type1 => MessageEntity, message => message.room, { eager: true })

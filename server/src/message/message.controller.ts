@@ -4,7 +4,7 @@ import {
     Get,
     Logger,
     Param,
-    ParseIntPipe,
+    ParseIntPipe, Post,
     Query,
     Req,
     UseGuards,
@@ -14,6 +14,7 @@ import {AuthGuard} from "@nestjs/passport";
 import {MessageService} from "./message.service";
 import {GetMessagesFilterDto} from "./dto/get-messages-filter.dto";
 import {MessageEntity} from "./message.entity";
+import {CreateMessageDto} from "./dto/create-message.dto";
 
 @Controller('message')
 @UseGuards(AuthGuard())
@@ -29,5 +30,14 @@ export class MessageController {
         @Req() req,
     ): Promise<MessageEntity[]> {
         return this.messageService.getMessages(filterDto, roomId, req.user)
+    }
+
+    @Post('/:roomId')
+    createMessage(
+        @Body(ValidationPipe) createMessageDto: CreateMessageDto,
+        @Param('roomId', ParseIntPipe) roomId: number,
+        @Req() req,
+    ): Promise<MessageEntity> {
+        return this.messageService.createMessage(createMessageDto, roomId, req.user)
     }
 }
