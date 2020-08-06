@@ -9,7 +9,7 @@ export class RoomEntity extends BaseEntity {
     id: number
 
     @Column({nullable: true})
-        name: string
+    name: string
 
     @Column()
     type: boolean

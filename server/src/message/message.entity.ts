@@ -1,4 +1,4 @@
-import {BaseEntity, Column, Entity, ManyToOne, OneToOne, PrimaryGeneratedColumn} from "typeorm/index";
+import {BaseEntity, Column, Entity, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn} from "typeorm/index";
 import {UserEntity} from "../auth/user.entity";
 import {RoomEntity} from "../room/room.entity";
 
@@ -9,6 +9,15 @@ export class MessageEntity extends BaseEntity {
 
     @Column()
     message: string
+
+    @Column("time without time zone",{ nullable: true })
+    receivedAt: string
+
+    @Column("time without time zone", { nullable: true })
+    readAt: string
+    //
+    // @OneToMany(type => UserEntity, user => user.messages, { eager: true })
+    // readBy: UserEntity[]
 
     @ManyToOne(type => UserEntity, user => user.messages, { eager: false })
     user: UserEntity

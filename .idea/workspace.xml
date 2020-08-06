@@ -2,25 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf62d892-d430-403a-92d1-bb59fb354cac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/src/auth/dto/signup-credentials.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/toDo.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/message/message.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/message/message.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/user.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/message/dto/create-message.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/message/dto/create-message.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/message/dto/get-messages-filter.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/message/dto/get-messages-filter.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/message/message.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/message/message.entity.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/participant/dto/create-participant.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/participant/dto/create-participant.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/participant/participant.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/participant/participant.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/participant/participant.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/participant/participant.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/participant/participant.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/participant/participant.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/participant/participant.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/participant/participant.entity.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/room/dto/create-room.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/room/dto/create-room.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/room/room.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/room/room.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/room/dto/get-rooms-filter.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/room/dto/get-rooms-filter.dto.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/room/room.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/room/room.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/room/room.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/room/room.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/room/room.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/room/room.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/room/room.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/room/room.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,6 +60,7 @@
       <workItem from="1596611210675" duration="9210000" />
       <workItem from="1596621641884" duration="7623000" />
       <workItem from="1596687564395" duration="20157000" />
+      <workItem from="1596712622301" duration="2188000" />
     </task>
     <servers />
   </component>

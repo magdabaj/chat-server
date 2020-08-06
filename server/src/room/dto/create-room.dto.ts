@@ -1,7 +1,8 @@
-import {IsNotEmpty, IsOptional} from "class-validator";
+import {IsNotEmpty, IsOptional, IsString} from "class-validator";
 
 export class CreateRoomDto {
     @IsOptional()
+    @IsString()
     name: string
 
     // @IsNotEmpty()

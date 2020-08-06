@@ -8,6 +8,9 @@ export class ParticipantEntity extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number
 
+    // @Column()
+    // isAdmin: boolean
+
     @ManyToOne(type => UserEntity, user => user.participants)
     user: UserEntity
 

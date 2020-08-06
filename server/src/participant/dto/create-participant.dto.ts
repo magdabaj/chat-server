@@ -1,8 +1,7 @@
-import {IsNotEmpty} from "class-validator";
-import {ParseIntPipe} from "@nestjs/common";
-
+import {IsInt, IsNotEmpty} from "class-validator";
 
 export class CreateParticipantDto {
     @IsNotEmpty()
+    @IsInt()
     userId: number
 }
