@@ -12,6 +12,9 @@ import {ParticipantService} from "./participant.service";
     ],
     providers: [ParticipantService],
     controllers: [ParticipantController],
+    exports: [
+        ParticipantService,
+    ]
 })
 export class ParticipantModule {
 }
