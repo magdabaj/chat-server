@@ -11,6 +11,7 @@ import {ParticipantModule} from "../participant/participant.module";
   imports: [
       TypeOrmModule.forFeature([RoomRepository]),
       AuthModule,
+      ParticipantModule
   ],
   providers: [RoomService],
   controllers: [RoomController]

@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import {Injectable, NotFoundException} from '@nestjs/common';
 import {InjectRepository} from "@nestjs/typeorm";
 import {RoomRepository} from "./room.repository";
 import {GetRoomsFilterDto} from "./dto/get-rooms-filter.dto";
@@ -23,7 +23,20 @@ export class RoomService {
         filterDto: GetRoomsFilterDto,
         user: UserEntity
     ): Promise<RoomEntity[]> {
+        // const rooms = await this.roomRepository.find({relations: ['participants']})
+        // console.log(rooms.filter(room => room.participants.some(part => part.userId === user.id)))
         return this.roomRepository.getRooms(filterDto, user)
+    }
+
+    async getOneRoom(
+        user: UserEntity,
+        roomId: number
+    ): Promise<RoomEntity> {
+        const room = await this.roomRepository.getOneRoom(roomId, user)
+
+        if (!room) throw new NotFoundException(`Room with id ${roomId} not found`)
+
+        return room
     }
 
     async createRoom(
@@ -32,15 +45,7 @@ export class RoomService {
     ): Promise<RoomEntity> {
         // participant repository add all participants
 
-        const room = await this.roomRepository.createRoom(createRoomDto, user)
+        return  await this.roomRepository.createRoom(createRoomDto, user)
         // await this.createParticipant({roomId: room.id}, user)
-        return room;
     }
-
-    // private async createParticipant(
-    //     createParticipantDto: CreateParticipantDto,
-    //     user
-    // ): Promise<ParticipantEntity> {
-    //     return this.participantRepository.createParticipant(createParticipantDto, user)
-    // }
 }

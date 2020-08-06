@@ -16,32 +16,42 @@ export class ParticipantService {
         roomId: number,
         user: UserEntity
     ): Promise<ParticipantEntity[]> {
-        return this.participantRepository.getParticipants(roomId, user)
+        const authorised = await this.isParticipant(roomId, user)
+
+        if (!authorised) throw new NotFoundException(`Room with id ${roomId} not found.`)
+
+        return this.participantRepository.getParticipants(roomId)
     }
 
-    async getRooms(
-        user: UserEntity
-    ): Promise<ParticipantEntity[]> {
-        return this.participantRepository.getRooms(user)
+    async createFirstParticipant(
+        user: UserEntity,
+        roomId: number
+    ): Promise<ParticipantEntity> {
+        return this.participantRepository.createFirstParticipant(roomId, user)
     }
 
     async createParticipant(
         user: UserEntity,
-        createParticipantDto: CreateParticipantDto,
+        userId: number,
         roomId: number
     ): Promise<ParticipantEntity> {
-        return this.participantRepository.createParticipant(roomId, createParticipantDto, user)
+        const authorised = await this.isParticipant(roomId, user)
+
+        if (!authorised) throw new NotFoundException(`Room with id ${roomId} not found`)
+
+        return this.participantRepository.createParticipant(roomId, userId)
     }
 
-    async getParticipantsForRoom(
+    async isParticipant(
         roomId: number,
         user: UserEntity
-    ): Promise<any> {
+    ): Promise<boolean> {
         try {
             const participant = await this.participantRepository.findOneOrFail({roomId: roomId},{ relations: ['room']})
 
-            return participant.room.participants.some(part => part.userId === user.id) && participant !== undefined
+            return participant.room.participants.some(part => part.userId === user.id)
         } catch (e) {
+            console.log(e)
             return false
         }
     }

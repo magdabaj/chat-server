@@ -17,6 +17,8 @@ export class RoomRepository extends Repository<RoomEntity> {
         user: UserEntity,
     ): Promise<RoomEntity[]> {
         const { search } = filterDto
+
+        // const rooms = await this.find({relations: ['participants']})
         const query = this.createQueryBuilder('room')
 
         if (search) query.andWhere('room.name LIKE :search', { search: `%${search}%` })
@@ -25,9 +27,7 @@ export class RoomRepository extends Repository<RoomEntity> {
 
         try {
             const rooms = await query.getMany()
-            let userRooms = []
-            rooms.map(room => room.participants.some(participant => participant.userId === user.id ? userRooms.push(room) : null))
-            return userRooms
+            return rooms.filter(room => room.participants.some(part => part.userId === user.id))
         } catch (e) {
             this.logger.error(`Failed to get rooms for user "${user.username}". Filters DTO: ${JSON.stringify(filterDto)}`, e.stack)
             throw new InternalServerErrorException()
@@ -45,17 +45,7 @@ export class RoomRepository extends Repository<RoomEntity> {
 
         try {
             const rooms = await query.getMany()
-            let userRoom = new RoomEntity()
-            rooms.map(room =>
-                room.participants.some(
-                    participant =>
-                        participant.userId === user.id ?
-                            userRoom = room :
-                            userRoom = null
-                )
-            )
-            if (userRoom === null) throw new NotFoundException()
-            else return userRoom
+            return rooms.find(room => room.participants.some(part => part.userId === user.id))
         } catch (e) {
             this.logger.error(`Failed to get room with id ${roomId} for user "${user.username}".`, e.stack)
             throw new InternalServerErrorException()

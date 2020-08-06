@@ -2,7 +2,7 @@ import {
     Body,
     Controller,
     Get,
-    Logger,
+    Logger, NotFoundException,
     Param,
     ParseIntPipe,
     Post,
@@ -15,38 +15,38 @@ import {AuthGuard} from "@nestjs/passport";
 import {ParticipantService} from "./participant.service";
 import {ParticipantEntity} from "./participant.entity";
 import {CreateParticipantDto} from "./dto/create-participant.dto";
+import {AuthService} from "../auth/auth.service";
 
 @Controller('participants')
 @UseGuards(AuthGuard())
 export class ParticipantController {
     private logger = new Logger('ParticipantController')
-    constructor(private participantService: ParticipantService) {}
-
-    @Get()
-    getRooms(
-        @Req() req
-    ): Promise<ParticipantEntity[]> {
-        this.logger.verbose(`User "${req.user.username}" retrieving all rooms.`)
-        return this.participantService.getRooms(req.user)
-    }
+    constructor(
+        private participantService: ParticipantService,
+        private authService: AuthService
+        ) {}
 
     @Get('/:roomId')
     getParticipants(
         @Param('roomId', ParseIntPipe) roomId,
         @Req() req
     ): Promise<ParticipantEntity[]> {
-        this.logger.verbose(`User "${req.user.username}" retrieving all participants.`)
+        this.logger.verbose(`User "${req.user.username}" retrieving all participants for room ${roomId}.`)
         return this.participantService.getParticipants(roomId, req.user)
     }
 
     @Post('/:roomId')
     @UsePipes(ValidationPipe)
-    createParticipant(
+    async createParticipant(
         @Param('roomId', ParseIntPipe) roomId,
-        @Body('userId', ParseIntPipe, ValidationPipe) createParticipantDto: CreateParticipantDto,
+        @Body('userId',ParseIntPipe) userId: number,
         @Req() req
     ): Promise<ParticipantEntity> {
-        this.logger.verbose(`User "${req.user.username}" creating a new participant with id ${JSON.stringify(createParticipantDto)}. Data: ${JSON.stringify(roomId)} `)
-        return this.participantService.createParticipant(roomId, createParticipantDto, req.user)
+        const found = await this.authService.findUser(userId)
+
+        if (!found) throw new NotFoundException(`User with id ${userId} not found`)
+
+        this.logger.verbose(`User "${req.user.username}" creating a new participant with userId ${JSON.stringify(userId)}. Room id: ${JSON.stringify(roomId)} `)
+        return this.participantService.createParticipant(req.user, userId, roomId)
     }
 }
