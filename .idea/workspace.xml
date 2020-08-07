@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf62d892-d430-403a-92d1-bb59fb354cac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/auth/dto/signup-credentials.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/toDo.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/auth/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/user.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/message/dto/create-message.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/message/dto/create-message.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/message/dto/get-messages-filter.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/message/dto/get-messages-filter.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/message/message.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/message/message.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/participant/dto/create-participant.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/participant/dto/create-participant.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/participant/participant.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/participant/participant.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/room/dto/create-room.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/room/dto/create-room.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/room/dto/get-rooms-filter.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/room/dto/get-rooms-filter.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/room/room.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/room/room.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/user.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/toDo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/toDo.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +54,7 @@
       <workItem from="1596621641884" duration="7623000" />
       <workItem from="1596687564395" duration="20157000" />
       <workItem from="1596712622301" duration="2188000" />
+      <workItem from="1596784125259" duration="1897000" />
     </task>
     <servers />
   </component>

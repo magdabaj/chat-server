@@ -18,6 +18,9 @@ export class UserEntity extends BaseEntity {
     @Column()
     password: string
 
+    @Column({nullable: true})
+    isOnline: boolean
+
     @Column("timestamp")
     createDate: Date
 

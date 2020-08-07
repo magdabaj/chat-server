@@ -8,3 +8,4 @@
 // todo add profile photo to user
 // todo add date to message, sort by date
 // todo add files to room
+// todo add readBy to message

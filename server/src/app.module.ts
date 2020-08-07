@@ -5,6 +5,8 @@ import { AuthModule } from './auth/auth.module';
 import { MessageModule } from './message/message.module';
 import { RoomModule } from './room/room.module';
 import { ParticipantModule } from './participant/participant.module';
+import { ChatModule } from './chat/chat.module';
+import { ChatGateway } from './chat/chat.gateway';
 
 @Module({
   imports: [
@@ -12,7 +14,8 @@ import { ParticipantModule } from './participant/participant.module';
       AuthModule,
       MessageModule,
       RoomModule,
-      ParticipantModule
+      ParticipantModule,
+      ChatModule
   ],
 })
 export class AppModule {}
