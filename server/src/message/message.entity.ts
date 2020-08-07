@@ -10,11 +10,11 @@ export class MessageEntity extends BaseEntity {
     @Column()
     message: string
 
-    @Column("time without time zone",{ nullable: true })
-    receivedAt: string
+    @Column("timestamp",{ nullable: true })
+    receivedAt: Date
 
-    @Column("time without time zone", { nullable: true })
-    readAt: string
+    @Column("timestamp", { nullable: true })
+    readAt: Date
     //
     // @OneToMany(type => UserEntity, user => user.messages, { eager: true })
     // readBy: UserEntity[]

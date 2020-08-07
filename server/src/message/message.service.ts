@@ -39,9 +39,9 @@ export class MessageService {
         roomId: number,
         user: UserEntity
     ): Promise<MessageEntity> {
-        const message = await this.messageRepository.findOne({roomId: roomId},{ relations: ['room']})
-
-        if (!message.room.participants.some(part => part.userId === user.id)) throw new NotFoundException(`Room with id ${roomId} not found`)
+        // const message = await this.messageRepository.findOne({roomId: roomId},{ relations: ['room']})
+        //
+        // if (!message.room.participants.some(part => part.userId === user.id)) throw new NotFoundException(`Room with id ${roomId} not found`)
 
         return this.messageRepository.createMessage(user, roomId, createMessageDto)
     }

@@ -51,7 +51,7 @@ export class MessageController {
 
         if (!authorised) throw new NotFoundException(`Room with id ${roomId} not found`)
 
-        this.logger.verbose(`User "${req.user.username}" creating a new message. Data: ${JSON.stringify(createMessageDto)}, ${JSON.stringify(roomId)}`)
+        this.logger.verbose(`User "${req.user.username}" creating a new message. Data: ${JSON.stringify(createMessageDto)}, roomId: ${JSON.stringify(roomId)}`)
         return this.messageService.createMessage(createMessageDto, roomId, req.user)
     }
 

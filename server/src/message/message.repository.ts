@@ -47,6 +47,7 @@ export class MessageRepository extends Repository<MessageEntity> {
 
         newMessage.roomId = roomId
         newMessage.message = message
+        newMessage.receivedAt = new Date()
         newMessage.user = user
 
         try {

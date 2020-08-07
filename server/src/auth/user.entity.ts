@@ -4,7 +4,7 @@ import {MessageEntity} from "../message/message.entity";
 import {ParticipantEntity} from "../participant/participant.entity";
 
 @Entity()
-@Unique(['username', 'email'])
+@Unique(['username'])
 export class UserEntity extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number
@@ -18,8 +18,8 @@ export class UserEntity extends BaseEntity {
     @Column()
     password: string
 
-    @Column("time without time zone")
-    createDate: string
+    @Column("timestamp")
+    createDate: Date
 
     @Column()
     salt: string
