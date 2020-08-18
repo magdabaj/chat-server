@@ -8,6 +8,9 @@ import {AuthModule} from "../auth/auth.module";
   // ],
   providers: [
     ChatGateway
+  ],
+  exports: [
+      ChatModule, ChatGateway
   ]
 })
 export class ChatModule {}
