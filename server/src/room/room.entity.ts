@@ -12,7 +12,7 @@ export class RoomEntity extends BaseEntity {
     name: string
 
     @Column()
-    type: boolean
+    isPublic: boolean
 
     @OneToMany(type => ParticipantEntity, participant => participant.room, { eager: true })
     participants: ParticipantEntity[]

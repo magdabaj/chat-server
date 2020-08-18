@@ -7,6 +7,8 @@ import { RoomModule } from './room/room.module';
 import { ParticipantModule } from './participant/participant.module';
 import { ChatModule } from './chat/chat.module';
 import { ChatGateway } from './chat/chat.gateway';
+import { AlertGateway } from './alert/alert.gateway';
+import { AlertController } from './alert/alert.controller';
 
 @Module({
   imports: [
@@ -17,5 +19,7 @@ import { ChatGateway } from './chat/chat.gateway';
       ParticipantModule,
       ChatModule
   ],
+  providers: [AlertGateway],
+  controllers: [AlertController],
 })
 export class AppModule {}

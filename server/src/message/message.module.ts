@@ -14,7 +14,7 @@ import {ParticipantRepository} from "../participant/participant.repository";
       TypeOrmModule.forFeature([MessageRepository]),
       ParticipantModule
   ],
-  providers: [MessageService, ],
+  providers: [MessageService],
   controllers: [MessageController]
 })
 export class MessageModule {}

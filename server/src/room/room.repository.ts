@@ -58,10 +58,10 @@ export class RoomRepository extends Repository<RoomEntity> {
     ): Promise<RoomEntity> {
         const room = new RoomEntity()
 
-        const { name } = createRoomDto
+        const { name, isPublic } = createRoomDto
 
         room.name = name
-        room.type = false
+        room.isPublic = isPublic
 
         try {
             await room.save()
