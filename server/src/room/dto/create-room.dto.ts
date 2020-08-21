@@ -6,6 +6,5 @@ export class CreateRoomDto {
     name: string
 
     @IsNotEmpty()
-    @IsBoolean()
     isPublic: boolean
 }
